@@ -1,0 +1,177 @@
+<!-- HTML version declaration -->
+<!DOCTYPE html>
+<!-- Language declaration -->
+<html lang="en">
+
+<head>
+    <!-- 'meta charset' specified the character encoding -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- description in meta tag to describe the page -->
+    <meta name="description"
+        content="The best online store in Canada. What started small, with a single discount store and the simple idea of selling more for less, has grown over the last 50 years into the largest retailer in the world.">
+    <!-- keywords for search engines-->
+    <meta name="keywords" content="Store, Books, e-Books, Online Store, low price, Furniture, Electronic">
+    <meta name="author" content="Bruno Surdi Oliveira">
+    <!-- Link with the css file -->
+    <link rel="stylesheet" href="project.css">
+    <!-- Link to the css font - google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
+    <!-- Title Tag -->
+    <title>Home</title>
+</head>
+
+<body onload="initialize();">
+    <!-- Header tag with logo -->
+    <header>
+        <h1 id="logo"><span id="textLogo">Truck Store</span>
+            <img class="logoImg" src="resources/images/truck3.png" width="120px">
+        </h1>
+    </header>
+
+    <!-- nav with unordened list linking to other html files -->
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li>
+                <!-- Filter of store items on the nav bar -->
+                <select id="displayFilter" onchange="displayStoreItems();">
+                    <option disabled>Select a Category</option>
+                    <option selected value="All">CATEGORIES: All</option>
+                    <option value="Book">CATEGORY: Book</option>
+                    <option value="e-Book">CATEGORY: e-Book</option>
+                    <option value="Electronic">CATEGORY: Electronic</option>
+                    <option value="Fashion">CATEGORY: Fashion</option>
+                    <option value="Furniture">CATEGORY: Furniture</option>
+                    <option value="Toy">CATEGORY: Toy</option>
+                </select>
+            </li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <!-- Date/Time div -->
+    <div id="dateArea"> Date/Time </div>
+    <br><br>
+
+    <!-- Box Currency div -->
+    <div id="boxCurrency">
+        <!-- Img of the flag -->
+        <img id="currencyFlag" src="resources/images/FlagCAD.png">
+        <!-- Dropdown with the possibles currencies with 'CAD' selected -->
+        <select id="currencySelector" onchange="currencyChange();">
+            <option disabled>Currency</option>
+            <option selected value="CAD">CAD</option>
+            <option value="USA">USA</option>
+            <option value="GBP">GBP</option>
+            <option value="BRA">BRA</option>
+        </select>
+    </div>
+
+    <!-- The main content of a document.  -->
+    <main>
+        <fieldset>
+            <legend>Store Items</legend>
+            <br>
+            <!-- Div to output the store items accourding with the display -->
+            <div id="inventoryOutput" style="overflow-x:auto;">
+                <!-- Creating a table to be a dynamic table to display the products -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="stay">ID</th>
+                            <th class="stay">Product Name</th>
+                            <th class="stay">Price</th>
+                            <th class="responsive">Quantity on Hand</th>
+                            <th class="responsive">Max per Person</th>
+                            <th class="responsive">Category</th>
+                            <th class="responsive">Image</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+        <br>
+
+        <!-- Fieldset - area where you can add/remove to/from the cart and see the item details -->
+        <fieldset>
+            <legend>Select Items</legend>
+            <p>
+                <!-- input item ID -->
+                Item ID: <input type="text" id="addItemId" value="Item ID" onfocus="this.value=''" />
+                <br>
+            </p>
+            <p>
+                <!-- Input Quantity to be added or removed -->
+                Qty: <input type="text" id="addItemQty" value="1" />
+            </p>
+            <p>
+                <!-- Buttons -->
+                <input type="button" id="btnBlue" value="Item Details" onclick="displayItemDetails();" />
+                <input type="button" id="btnGreen" value="Add Item" onclick="addItemToCart();" />
+                <input type="button" id="btnRed" value="Remove Item" onclick="removeItemFromCart();" />
+                <br>
+                <!-- area to display the error messages -->
+                <span id="addValidationMessage"></span>
+            </p>
+        </fieldset>
+        <br>
+        <!-- Area to display the items in the cart -->
+        <fieldset>
+            <legend>Your Cart</legend>
+            <br>
+            <div id="cartOutput">
+                <!-- Dynamic table to display the products in the cart -->
+                <table id="table2">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody2">
+                    </tbody>
+                </table>
+                <br>
+                <!-- If there is no item - display this message -->
+                <span id="noItems">No items In Cart. Add items to Cart.</span>
+            </div>
+            <br>
+            <div id="cartCheckout"></div>
+        </fieldset>
+        <br>
+        <!-- FieldSet - Area where you can add a review for an item -->
+        <fieldset>
+            <legend>Review an Item</legend>
+            <!-- Input Item ID -->
+            <p>Product ID: <input type="text" id="reviewId" value="Item ID" />&nbsp;</p>
+            <!-- text Area to write a review -->
+            <p>Review: <textarea type="text" id="reviewDesc" rows="2" cols="30"></textarea></p>
+            <!-- Button -->
+            <p><input type="button" value="Review" onclick="review();" />
+                <br>
+                <!-- Area to display the error messages -->
+                <span id="reviewMsg"></span>
+            </p>
+        </fieldset>
+    </main> <!-- end of the main content -->
+
+    <!-- Link to the JS file -->
+    <script src="project.js"></script>
+
+    <!-- Footer tag -->
+    <footer>
+        <p>Contact information:
+            <!-- Link with my email -->
+            <a href="mailto:b_surdiolivera@fanshaweonline.ca">b_surdiolivera@fanshaweonline.ca</a>.
+        </p>
+        <p>© 2020 Truck Store</p> <img src="resources/images/truck3.png" width="50px">
+    </footer>
+</body>
+
+</html>

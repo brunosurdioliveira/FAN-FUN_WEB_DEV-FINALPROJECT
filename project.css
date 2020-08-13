@@ -1,0 +1,317 @@
+body {
+    /* Background image */
+    background-image: url(https://clip.cookdiary.net/sites/default/files/wallpaper/dark-textures-clipart/411282/dark-textures-clipart-black-wallpaper-411282-7676899.jpg);
+    background-color: rgba(0, 0, 0, 0.331);
+    /* Font Family */
+    font-family: "Trebuchet ms", arial, sans-serif;
+    text-align: center;
+    /* Color of the letters white */
+    color: #ffffff;
+}
+
+/* Date Area on the right - Color white */
+#dateArea {
+    float: right;
+    color: rgb(255, 255, 255);
+}
+
+/* Box Currency */
+#boxCurrency {
+    background-color:#A6A2A8; 
+    /* round de borders */
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    /* add some padding to avoid overlap */
+    padding: 10px 10px; 
+    /* Border */
+    border: 1px solid rgb(238, 238, 238); 
+    /* How is a mobile first design it's gonna be fixed on the left up the Store Items - with a desktop display (@media) I will make it go to the right with the position absolute */
+    float: left;
+    position: relative;
+    /* Add some margin on the top */
+    margin-top: 15px;
+    right: 0;
+}
+
+#currencyFlag {
+    /* ajusting the flag inside of the box currency */
+    /* Right of the box currency */
+    float: right;
+    width: 25px; 
+    /* Display block - stat on a new line */
+    display: block; 
+    margin-left: 8px;
+}
+
+/* All the space arround the logo */
+#logo {
+    text-align: center;
+    font-family: 'Gochi Hand', cursive;    
+    font-size: 100px;
+    /* Letter spacing of 10px */
+    letter-spacing: 10px;
+    padding-top: 10px;
+    /* Add a shadow */
+    text-shadow: 2px 2px #b6ded8;
+    color: rgb(181, 117, 20);
+    /* occupy 100% of the element */
+    max-width: 100%;
+    height: auto;
+    /* How its designed to be mobile-first, it is not necessary any margin */
+    margin: 0;
+}
+
+.logoImg {
+    /* Position absolute to be places anywhere I want to - better for the design to be righ after the logo Text */
+    position: absolute;
+    box-shadow: white;
+    height: auto;
+    opacity: 0.9;
+    width: 15%;
+}
+
+/* turn of the side when the mouse is over of the image */
+.logoImg:hover, footer img:hover {
+    transform: scaleX(-1);
+}
+
+/* Organize the fieldset */
+fieldset {
+    margin-right: 150px;
+    float: inline-start;
+    width: 95%;
+}
+
+fieldset legend {
+    /* Add some effecs on the legend just for aesthetic */
+    font-size: 30px;
+    letter-spacing: 3px;
+    color: #ffffff;
+}
+
+table {
+    /* Adding border */
+    border: 1px #c0c0c0 solid;
+    /* Occupy 100% of the element */
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+    background-color: whitesmoke;
+}
+
+/* Accessing the th inside of table */
+table th {
+    background-color: rgba(249, 162, 0, 0.831);
+    color: #fff;
+    height: 40px;
+}
+
+/* Accessing all the td inside of the table */
+table td {
+    border-bottom: 1px solid black;
+    max-width: 30px;
+    color: black;
+}
+
+/* Adding padding and alling the tex on th and td of the table */
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+/* When the mouse is over change the background color of the tr */
+tr:hover {
+    background-color: #b6ded8;
+}
+
+/* Accessing all the input of the type number */
+input[type=number] {
+    width: 30%;
+    margin: 30px;
+}
+
+/* Accessing all the buttons and adding some styles */
+input[type=button] {
+    background-color: white; 
+    color: #ff5252;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 11px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    border: 2px solid #ff5252;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* Styele the button when the mouse is over */
+input[type=button]:hover {
+    background-color: #ff5252; 
+    color: white;
+}
+
+/* When the button is clicked */
+input[type=button]:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(3px);
+}
+
+/* Color of the button blue */
+#btnBlue {
+    color: #2196f3;
+    border-color: #2196f3;
+}
+
+/* When the mouse is over of the button */
+#btnBlue:hover {
+    color: white;
+    background-color: #2196f3;
+}
+
+/* Green button */
+#btnGreen {
+    color: #4caf50;
+    border-color: #4caf50;
+}
+
+/* Green button when the mouse is over */
+#btnGreen:hover {
+    color: white;
+    background-color: #4caf50;
+}
+
+.pickOfProduct {
+    max-width: 50px;
+}
+
+/* Adding a background black and some style on the area where the error message will be displayed */
+#addValidationMessage, #reviewMsg {
+    color: #ff5252;
+    font-size: 12px;
+    letter-spacing: normal;
+    font-family: "Roboto", sans-serif;
+    background-color: black;
+}
+
+header a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Accessing the a tag in nav and on footer and adding some style */
+nav ul li a, footer a {
+    color: rgba(249, 162, 0, 0.831);
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav {
+    border: 1px solid #999999;
+    background-color: white;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    text-align: center;
+}
+
+nav ul {
+    /* take out the points */
+    list-style: none;
+    padding-left: 0;
+}
+
+nav ul li, nav select {
+    display: block;
+    margin: 17px;
+    color: rgba(249, 162, 0, 0.831);
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: white;
+    text-align: -webkit-center;
+}
+
+/* when its on small devices do not show the .responsive class (some informations on the table that is not essential to show - it can be accessed on the item information) */
+.responsive {
+    display: none;
+}
+
+.stay {
+    width: 20%;
+}
+
+#textLogo {
+    font-size: 30%;
+    color: rgb(181, 117, 20);
+}
+
+/* when the devixe is bigger than 768px show the class .responsive and adjust others accourding to the width */
+@media only screen and (min-width:768px) {
+    .responsive {
+        display: table-cell;
+    }
+
+    #textLogo {
+        font-size: 100%;
+    }
+
+    .logoImg {
+        width: 100px;
+    }
+
+    #logo {
+        margin-top: 67px;
+        margin-bottom: 67px;
+    }
+
+    nav ul li, nav select {
+        display: inline;
+        align-self: center;
+    }
+}
+
+#displayFilter {
+    text-align-last: center;
+}
+
+/* Floating right the box currency with the position fixed when the width is equal or larger than 1300px */
+@media only screen and (min-width: 1300px) {
+    #boxCurrency {
+        float: right;
+        position: fixed;
+        right: 10px;
+    }
+
+    fieldset {
+        width: 87%;
+    }
+}
+
+#textAbout, #contact {
+    text-align: center;
+    padding-left: calc((100% - 1000px)/ 2);
+    padding-right: calc((100% - 1000px)/ 2);
+    border: 1px solid black;
+    background-color: black;
+    opacity: 0.8;
+    /* width: 60%; */
+}
+
+@media only screen and (min-width: 1024px) {
+    #textAbout {
+    padding-top: 10px;
+    }
+}
+
+/* Taking out the border of the dropdown */
+select {
+    border: none;
+    outline: none;
+}
